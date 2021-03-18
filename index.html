@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Thần Số Học</title>
+        <link rel="stylesheet" href="./style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container">
+			<div class="input"> 
+				<div>
+                    <label for="name">Họ tên: </label>
+				    <input type="text" id="name" />
+                </div>
+				<div>
+                    <label for="date">Ngày sinh:</label>
+                    <input type="date" id="date" />
+                </div>
+                <button type="button" class="btn btn-primary" id="btn">Kết Quả</button>
+			</div>
+            <div id="result">
+                <p id="init"></p>
+                <p id="info"></p>
+                <p id="duongdoi"></p>
+                <p id="sumenh"></p>
+                <p id="khattam"></p>
+                <p id="nhancach"></p>
+                <p id="caunoi">
+                    <p id="duongdoisumenh"></p>
+                    <p id="khattamnhancach"></p>
+                </p>
+                <p id="dammebaihoctiemthuc">
+                    <p id="damme"></p>
+                    <p id="baihoc"></p>
+                </p>
+                <p id="suynghihoply"></p>
+                <p id="canbang"></p>
+                <p id="chukycuocsong"></p>
+                <p id="chukydinhcao"></p>
+                <p id="chukythachthuc"></p>
+                <p id="namcanhan"></p>
+            </div>
+		</div>
+
+        <script src="./congthuc.js"></script>
+        <script>
+            let nameElement = document.querySelector('#name');
+            let dateElement = document.querySelector('#date');
+            let btnElement = document.querySelector('#btn');
+
+            btnElement.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                let name = nameElement.value;
+                let date = dateElement.value;
+                
+                result = main(name, date);
+
+                document.querySelector('#init').innerHTML = `Bảng thần số của:`;
+                document.querySelector('#duongdoi').innerHTML = `Đường đời: ${result.duongdoi}`;
+                document.querySelector('#sumenh').innerHTML = `Sứ mệnh: ${result.sumenh}`;
+                document.querySelector('#khattam').innerHTML = `Khát tâm: ${result.khattam}`;
+                document.querySelector('#nhancach').innerHTML = `Nhân cách: ${result.nhancach}`;
+                document.querySelector('#duongdoisumenh').innerHTML = `Cầu nối đường đời sứ mệnh: ${result.caunoi.duongdoisumenh}`;
+                document.querySelector('#khattamnhancach').innerHTML = `Cầu nối khát tâm nhân cách: ${result.caunoi.khattamnhancach}`;
+                document.querySelector('#damme').innerHTML = `Đam mê tiềm ẩn: ${result.dammebaihoctiemthuc.damme.join('-')}`;
+                document.querySelector('#baihoc').innerHTML = `Bài học cuộc sống: ${result.dammebaihoctiemthuc.baihoc.join('-')}`;
+                document.querySelector('#suynghihoply').innerHTML = `Suy nghĩ hợp lý: ${result.suynghihoply}`;
+                document.querySelector('#canbang').innerHTML = `Con số cân bằng: ${result.canbang}`;
+                let cuocsong = '';
+                result.chukycuocsong.map((x) => {
+                    return cuocsong += `<p>${x.start}-${x.end}: ${x.number}</p>` 
+                })
+                document.querySelector('#chukycuocsong').innerHTML = `Chu kỳ cuộc sống: ${cuocsong}`;
+
+                let dinhcao = '';
+                result.chukydinhcao.map((x) => {
+                    return dinhcao += `<p>${x.start}-${x.end}: ${x.number}</p>` 
+                })
+                document.querySelector('#chukydinhcao').innerHTML = `Chu kỳ đỉnh cao: ${dinhcao}`;
+
+                let thachthuc = '';
+                result.chukythachthuc.map((x) => {
+                    return thachthuc += `<p>${x.start}-${x.end}: ${x.number}</p>` 
+                })
+                document.querySelector('#chukythachthuc').innerHTML = `Chu kỳ thách thức: ${thachthuc}`;
+
+                let namcanhan = '';
+                result.namcanhan.map((x) => {
+                    return namcanhan += `<p>${x.year}: ${x.number}</p>` 
+                })
+                document.querySelector('#namcanhan').innerHTML = `Năm cá nhân: ${namcanhan}`;
+
+                const info = `### ${name.toUpperCase()}, ${new Date(date).getDate()}/${new Date(date).getMonth() + 1}/${new Date(date).getFullYear() + 1} ###`
+                
+                document.querySelector('#info').innerHTML = `<p>${info}</p>`;
+            })
+        </script>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+.input > div {
+	margin: 1rem 0;
+}
+.input input {
+	width: 100%;
+}
+.input label {
+	margin-bottom: 1rem;
+}
+.input #btn {
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+}
+#result #chukycuocsong > p {
+	margin-left: 2rem;
+}
+#result #chukydinhcao > p {
+	margin-left: 2rem;
+}
+#result #chukythachthuc > p {
+	margin-left: 2rem;
+}
+#result #namcanhan > p {
+	margin-left: 2rem;
+}
