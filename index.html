@@ -30,6 +30,7 @@
                     <p id="duongdoisumenh"></p>
                     <p id="khattamnhancach"></p>
                 </p>
+                <p id="ngaysinh"></p>
                 <p id="dammebaihoctiemthuc">
                     <p id="damme"></p>
                     <p id="baihoc"></p>
@@ -64,6 +65,7 @@
                 document.querySelector('#nhancach').innerHTML = `Nhân cách: ${result.nhancach}`;
                 document.querySelector('#duongdoisumenh').innerHTML = `Cầu nối đường đời sứ mệnh: ${result.caunoi.duongdoisumenh}`;
                 document.querySelector('#khattamnhancach').innerHTML = `Cầu nối khát tâm nhân cách: ${result.caunoi.khattamnhancach}`;
+                document.querySelector('#ngaysinh').innerHTML = `Số ngày sinh: ${result.ngaysinh}`;
                 document.querySelector('#damme').innerHTML = `Đam mê tiềm ẩn: ${result.dammebaihoctiemthuc.damme.join('-')}`;
                 document.querySelector('#baihoc').innerHTML = `Bài học cuộc sống: ${result.dammebaihoctiemthuc.baihoc.join('-')}`;
                 document.querySelector('#suynghihoply').innerHTML = `Suy nghĩ hợp lý: ${result.suynghihoply}`;

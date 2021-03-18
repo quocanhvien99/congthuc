@@ -426,6 +426,7 @@ const main = (name, date) => {
 		khattam: sokhattam,
 		nhancach: sonhancach,
 		caunoi: socaunoi,
+		ngaysinh: date.day,
 		dammebaihoctiemthuc: sodammebaihoctiemthuc,
 		suynghihoply: sosuynghihoply,
 		canbang: socanbang,
