@@ -70,20 +70,20 @@
                 document.querySelector('#suynghihoply').innerHTML = `Suy nghĩ hợp lý: ${result.suynghihoply.join('/')}`;
                 document.querySelector('#canbang').innerHTML = `Con số cân bằng: ${result.canbang.join('/')}`;
                 let cuocsong = '';
-                result.chukycuocsong.map((x) => {
-                    return cuocsong += `<p>${x.start}-${x.end}: ${x.number.join('/')}</p>` 
+                result.chukycuocsong.map((x, index) => {
+                    return cuocsong += `<p>Chu kỳ ${index + 1}: ${x.start}-${x.end}: ${x.number.join('/')}</p>` 
                 })
                 document.querySelector('#chukycuocsong').innerHTML = `Chu kỳ cuộc sống: ${cuocsong}`;
 
                 let dinhcao = '';
-                result.chukydinhcao.map((x) => {
-                    return dinhcao += `<p>${x.start}-${x.end}: ${x.number.join('/')}</p>` 
+                result.chukydinhcao.map((x, index) => {
+                    return dinhcao += `<p>Đỉnh cao ${index + 1}: ${x.start}-${x.end}: ${x.number.join('/')}</p>` 
                 })
                 document.querySelector('#chukydinhcao').innerHTML = `Chu kỳ đỉnh cao: ${dinhcao}`;
 
                 let thachthuc = '';
                 result.chukythachthuc.map((x, index) => {
-                    return thachthuc += `<p>${x.start}${index == 2 ? '' : `-${x.end}`}: ${x.number.join('/')}</p>` 
+                    return thachthuc += `<p>Thách thức ${index + 1}: ${x.start}${index == 2 ? '' : `-${x.end}`}: ${x.number.join('/')}</p>` 
                 })
                 document.querySelector('#chukythachthuc').innerHTML = `Chu kỳ thách thức: ${thachthuc}`;
 
