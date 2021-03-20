@@ -325,13 +325,15 @@ const chukydinhcao = (date, duongdoi) => {
 	let numb1 = shortenNumber1(date.month + date.day);
 	let start1 = date.year;
 	let end1 = date.year + 36 - duongdoi;
-	let numb2 = shortenNumber1(date.year + date.day);
+	let numb2 = shortenNumber1(shortenNumber1(date.year).slice(-1)[0] + date.day);
 	let start2 = end1 + 1;
 	let end2 = end1 + 9;
 	let numb3 = shortenNumber1(numb1.slice(-1)[0] + numb2.slice(-1)[0]);
 	let start3 = end2 + 1;
 	let end3 = end2 + 9;
-	let numb4 = shortenNumber1(date.month + date.year);
+	let numb4 = shortenNumber1(
+		date.month + shortenNumber1(date.year).slice(-1)[0]
+	);
 	let start4 = end3 + 1;
 	let end4 = 'hết';
 

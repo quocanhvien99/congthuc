@@ -82,8 +82,8 @@
                 document.querySelector('#chukydinhcao').innerHTML = `Chu kỳ đỉnh cao: ${dinhcao}`;
 
                 let thachthuc = '';
-                result.chukythachthuc.map((x) => {
-                    return thachthuc += `<p>${x.start}-${x.end}: ${x.number.join('/')}</p>` 
+                result.chukythachthuc.map((x, index) => {
+                    return thachthuc += `<p>${x.start}${index == 2 ? '' : `-${x.end}`}: ${x.number.join('/')}</p>` 
                 })
                 document.querySelector('#chukythachthuc').innerHTML = `Chu kỳ thách thức: ${thachthuc}`;
 
