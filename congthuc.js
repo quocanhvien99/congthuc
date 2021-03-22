@@ -463,4 +463,4 @@ const main = (name, date) => {
 	};
 };
 
-console.log(main('NGUYỄN THỊ LAN HƯƠNG', '07/06/1984'));
+//console.log(main('NGUYỄN THỊ LAN HƯƠNG', '07/06/1984'));
