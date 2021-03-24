@@ -225,7 +225,7 @@ const nhancach = (name) => {
 	return shortenNumber1(hoNumb + tenchinhNumb + tendemNumb);
 };
 
-// const truongthanh = (duongdoi, sumenh) => shortenNumber(duongdoi + sumenh);
+const truongthanh = (duongdoi, sumenh) => shortenNumber1(duongdoi + sumenh);
 
 const caunoi = (duongdoi, sumenh, khattam, nhancach) => {
 	if (duongdoi == 11) duongdoi = 2;
@@ -430,6 +430,10 @@ const main = (name, date) => {
 	const sosumenh = sumenh(name);
 	const sokhattam = khattam(name);
 	const sonhancach = nhancach(name);
+	const sotruongthanh = truongthanh(
+		soduongdoi.slice(-1)[0],
+		sosumenh.slice(-1)[0]
+	);
 	const socaunoi = caunoi(
 		soduongdoi.slice(-1)[0],
 		sosumenh.slice(-1)[0],
@@ -451,6 +455,7 @@ const main = (name, date) => {
 		sumenh: sosumenh,
 		khattam: sokhattam,
 		nhancach: sonhancach,
+		truongthanh: sotruongthanh,
 		caunoi: socaunoi,
 		ngaysinh: date.day,
 		dammebaihoctiemthuc: sodammebaihoctiemthuc,
@@ -462,5 +467,3 @@ const main = (name, date) => {
 		namcanhan: sonamcanhan,
 	};
 };
-
-//console.log(main('NGUYỄN THỊ LAN HƯƠNG', '07/06/1984'));
